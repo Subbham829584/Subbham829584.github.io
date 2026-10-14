@@ -942,6 +942,14 @@ body:hover .cursor-outline.hovered {
   color: var(--text-muted);
 }
 
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
 /* ===================================================
    EXPERIENCE SECTION
    =================================================== */
