@@ -199,10 +199,10 @@ function initTypingEffect() {
   if (!target) return;
 
   const words = [
-    'Next-Gen Web Apps',
-    'Sleek Flutter Apps',
-    'Stunning 3D UIs',
-    'Scalable Cloud APIs'
+    'Flutter & Dart Apps',
+    'VMS for 50+ Vessels',
+    '20+ Cloud Functions',
+    'FastAPI & ETL Pipelines'
   ];
 
   let wordIdx = 0;

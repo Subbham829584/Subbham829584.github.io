@@ -1245,36 +1245,54 @@ body:hover .cursor-outline.hovered {
   flex: 1;
 }
 
+.skill-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
 .skill-name {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.02rem;
   color: #fff;
-  display: block;
-  margin-bottom: 8px;
 }
 
-.skill-bar-wrap {
-  width: 100%;
-  height: 7px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 6px;
+.skill-level {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.skill-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
-  border-radius: 10px;
-  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 10px var(--accent-cyan);
+.skill-level.prod {
+  background: rgba(0, 242, 254, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
 }
 
-.skill-pct {
-  font-size: 0.78rem;
+.skill-level.core {
+  background: rgba(79, 172, 254, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(79, 172, 254, 0.35);
+}
+
+.skill-level.proficient {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.skill-sub {
+  font-size: 0.82rem;
   color: var(--text-muted);
-  font-family: var(--font-mono);
+  display: block;
+  line-height: 1.4;
 }
 
 /* ===================================================
@@ -1487,6 +1505,7 @@ body:hover .cursor-outline.hovered {
 }
 
 .proj-status.online { color: var(--accent-emerald); text-shadow: 0 0 8px var(--accent-emerald); }
+.proj-status.completed { color: #38bdf8; text-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
 .proj-status.beta { color: #f59e0b; text-shadow: 0 0 8px #f59e0b; }
 .proj-status.pipeline { color: var(--accent-cyan); text-shadow: 0 0 8px var(--accent-cyan); }
 
