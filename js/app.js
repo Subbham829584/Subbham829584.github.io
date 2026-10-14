@@ -374,7 +374,7 @@ function initSkillsFilter() {
    7. 3D TILT EFFECT
    ========================================================== */
 function init3DTilt() {
-  const tiltCards = document.querySelectorAll('.project-card, .about-card');
+  const tiltCards = document.querySelectorAll('.project-card, .about-card, .exp-card, .cert-card');
 
   tiltCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {

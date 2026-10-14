@@ -28,8 +28,10 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#home" class="nav-link" id="nl-home">Home</a></li>
       <li><a href="#about" class="nav-link" id="nl-about">About</a></li>
+      <li><a href="#experience" class="nav-link" id="nl-experience">Experience</a></li>
       <li><a href="#skills" class="nav-link" id="nl-skills">Skills</a></li>
       <li><a href="#projects" class="nav-link" id="nl-projects">Projects</a></li>
+      <li><a href="#certifications" class="nav-link" id="nl-certifications">Certificates</a></li>
       <li><a href="#contact" class="nav-link" id="nl-contact">Contact</a></li>
     </ul>
     <button class="nav-cta" id="nav-hire-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
@@ -43,8 +45,10 @@
     <ul class="mobile-nav-links" id="mobile-nav-links">
       <li><a href="#home" class="mobile-nav-link">Home</a></li>
       <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
       <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
       <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#certifications" class="mobile-nav-link">Certificates</a></li>
       <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
     </ul>
   </div>
@@ -177,6 +181,99 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE SECTION ===================== -->
+    <section id="experience" class="experience-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// career journey</span>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+
+      <div class="experience-timeline">
+
+        <!-- Experience 1: Software Developer at VoyageX.ai -->
+        <div class="exp-card reveal reveal-left" id="exp-voyagex-dev">
+          <div class="exp-header">
+            <div class="exp-role-company">
+              <div class="exp-icon-wrap voyagex-glow">🚢</div>
+              <div>
+                <h3 class="exp-role">Software Developer</h3>
+                <h4 class="exp-company"><span class="company-name">VoyageX.ai</span> • <span class="exp-location">Gurugram, India</span></h4>
+              </div>
+            </div>
+            <div class="exp-badge current">
+              <span class="badge-pulse"></span>
+              Apr 2026 – Present
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Built and operated <strong>20+ Cloud Functions</strong> on VoyageX Server, powering core backend architecture including automated job generation, multi-tier data synchronization, and real-time notification triggers for the VoyageX vessel management app.</li>
+            <li>Maintained and enhanced the legacy <strong>Darya system</strong>, ensuring high reliability, data integrity, and uninterrupted operations across <strong>50+ commercial maritime vessels</strong>.</li>
+            <li>Actively contributing to the <strong>VoyageX deployment integration at New Mangalore Port</strong>, supporting mission-critical real-world maritime operations.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">TypeScript</span>
+            <span class="exp-tag">Node.js</span>
+            <span class="exp-tag">Cloud Functions</span>
+            <span class="exp-tag">Maritime Systems</span>
+            <span class="exp-tag">Backend Architecture</span>
+          </div>
+        </div>
+
+        <!-- Experience 2: Software Developer Intern at VoyageX.ai -->
+        <div class="exp-card reveal reveal-right" id="exp-voyagex-intern">
+          <div class="exp-header">
+            <div class="exp-role-company">
+              <div class="exp-icon-wrap flutter-glow">📱</div>
+              <div>
+                <h3 class="exp-role">Software Developer Intern</h3>
+                <h4 class="exp-company"><span class="company-name">VoyageX.ai</span> • <span class="exp-location">Gurugram, India</span></h4>
+              </div>
+            </div>
+            <div class="exp-badge">Dec 2025 – Apr 2026</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Developed and maintained core modules of a production <strong>Vessel Management System (VMS)</strong> app utilizing <strong>Flutter</strong>, <strong>Firebase / Cloud Firestore</strong>, and <strong>Riverpod</strong> for reactive state management.</li>
+            <li>Diagnosed and engineered a robust fix for a critical <strong>Planned Maintenance System (PMS)</strong> bug where bulk-deleting job documents bypassed completion triggers, resolved by invoking idempotent job-generation logic directly within the Cloud Function.</li>
+            <li>Collaborated with a cross-functional product & engineering team using Git-based workflows, structured code reviews, and Agile sprints to ship features continuously.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Flutter</span>
+            <span class="exp-tag">Dart</span>
+            <span class="exp-tag">Riverpod</span>
+            <span class="exp-tag">Firebase / Firestore</span>
+            <span class="exp-tag">Code Review</span>
+          </div>
+        </div>
+
+        <!-- Experience 3: Data Engineering Intern at Infosys Springboard -->
+        <div class="exp-card reveal reveal-left" id="exp-infosys-intern">
+          <div class="exp-header">
+            <div class="exp-role-company">
+              <div class="exp-icon-wrap airflow-glow">⚙️</div>
+              <div>
+                <h3 class="exp-role">Data Engineering Intern</h3>
+                <h4 class="exp-company"><span class="company-name">Infosys Springboard Virtual Internship 6.0</span> • <span class="exp-location">Remote</span></h4>
+              </div>
+            </div>
+            <div class="exp-badge">Dec 2025 – Feb 2026</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Built and deployed an automated <strong>ETL orchestration framework</strong> using <strong>Python</strong> and <strong>Apache Airflow</strong>, processing <strong>5,000+ records</strong> across robust large-scale pipelines.</li>
+            <li>Designed multi-format ingestion pipelines (CSV, Excel, JSON, PDF, DOCX) backed by a custom <strong>5-dimension data quality scoring engine</strong>.</li>
+            <li>Implemented Airflow DAG scheduling with intelligent retry logic and constructed an interactive <strong>Streamlit monitoring dashboard</strong> for real-time pipeline visibility, cutting manual operational oversight by ~40%.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Apache Airflow</span>
+            <span class="exp-tag">ETL Pipelines</span>
+            <span class="exp-tag">Streamlit</span>
+            <span class="exp-tag">Data Quality</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -536,6 +633,192 @@
               </a>
               <span class="proj-status online">● Web App</span>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS SECTION ===================== -->
+    <section id="certifications" class="certifications-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// verified credentials</span>
+        <h2 class="section-title">Licenses & <span class="gradient-text">Certifications</span></h2>
+      </div>
+
+      <div class="certs-grid">
+
+        <!-- Cert 1: Stanford University ML -->
+        <div class="cert-card reveal" id="cert-stanford">
+          <div class="cert-card-shine"></div>
+          <div class="cert-top-bar">
+            <span class="cert-type-pill stanford-pill">Specialization</span>
+            <span class="cert-status-pill">✓ Verified</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-box stanford-box">🌲</div>
+            <div class="cert-info">
+              <span class="cert-issuer">Stanford University (Coursera)</span>
+              <h3 class="cert-name">Machine Learning Specialization</h3>
+              <p class="cert-desc">Mastered supervised learning, advanced deep learning architectures, multi-class neural networks, decision trees, and reinforcement learning instructed by Andrew Ng.</p>
+              <div class="cert-tags">
+                <span>Machine Learning</span>
+                <span>Neural Networks</span>
+                <span>DeepLearning.AI</span>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-date">📅 June 2025</span>
+            <a href="https://drive.google.com/file/d/1ah_XubUr_XbPfZsNU_hoiX7YXUDVxj2a/view" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 2: Introduction to NoSQL Databases -->
+        <div class="cert-card reveal" id="cert-nosql">
+          <div class="cert-card-shine"></div>
+          <div class="cert-top-bar">
+            <span class="cert-type-pill infosys-pill">Database Tech</span>
+            <span class="cert-status-pill">✓ Verified</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-box infosys-box">🍃</div>
+            <div class="cert-info">
+              <span class="cert-issuer">Infosys Springboard</span>
+              <h3 class="cert-name">Introduction to NoSQL Databases</h3>
+              <p class="cert-desc">In-depth study of non-relational database architectures, document-oriented datastores, JSON document modeling, indexing strategies, and distributed database scaling.</p>
+              <div class="cert-tags">
+                <span>NoSQL</span>
+                <span>MongoDB</span>
+                <span>Distributed Data</span>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-date">📅 October 2025</span>
+            <a href="https://drive.google.com/file/d/1BwU1tAUa5vL1wTdN2NOxlNy-oJ-iLQBP/view" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 3: Programming Fundamentals using Python -->
+        <div class="cert-card reveal" id="cert-python-fund">
+          <div class="cert-card-shine"></div>
+          <div class="cert-top-bar">
+            <span class="cert-type-pill infosys-pill">Programming</span>
+            <span class="cert-status-pill">✓ Verified</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-box python-box">🐍</div>
+            <div class="cert-info">
+              <span class="cert-issuer">Infosys Springboard</span>
+              <h3 class="cert-name">Programming Fundamentals using Python</h3>
+              <p class="cert-desc">Comprehensive mastery of Python language fundamentals, Object-Oriented Programming (OOP) paradigms, abstraction, inheritance, polymorphism, and algorithmic modularity.</p>
+              <div class="cert-tags">
+                <span>Python OOP</span>
+                <span>Algorithms</span>
+                <span>Software Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-date">📅 October 2025</span>
+            <a href="https://drive.google.com/file/d/1lYtfct2mM9ZJKlN0XQeSxTw0gqnRgL_Q/view" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 4: Solutions Architecture (Forage / Accenture) -->
+        <div class="cert-card reveal" id="cert-solution-arch">
+          <div class="cert-card-shine"></div>
+          <div class="cert-top-bar">
+            <span class="cert-type-pill forage-pill">Architecture</span>
+            <span class="cert-status-pill">✓ Verified</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-box forage-box">🏗️</div>
+            <div class="cert-info">
+              <span class="cert-issuer">Forage — Accenture Nordics</span>
+              <h3 class="cert-name">Solutions Architecture Simulation</h3>
+              <p class="cert-desc">Hands-on enterprise system simulation addressing enterprise cloud architecture, microservices topology, scalability planning, security policies, and technical proposals.</p>
+              <div class="cert-tags">
+                <span>System Design</span>
+                <span>Cloud Solutions</span>
+                <span>Enterprise Architecture</span>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-date">📅 2025 Simulation</span>
+            <a href="https://drive.google.com/file/d/1soKGMrtqTXPK9cr5A3OhLjS05K1V1g4o/view" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 5: Python for Everybody -->
+        <div class="cert-card reveal" id="cert-michigan-pfe">
+          <div class="cert-card-shine"></div>
+          <div class="cert-top-bar">
+            <span class="cert-type-pill michigan-pill">University Course</span>
+            <span class="cert-status-pill">✓ Verified</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-box michigan-box">〽️</div>
+            <div class="cert-info">
+              <span class="cert-issuer">University of Michigan (Coursera)</span>
+              <h3 class="cert-name">Python for Everybody</h3>
+              <p class="cert-desc">Foundational programming specialization covering programmatic data structures, networked application programming, web scraping, and REST web services integration.</p>
+              <div class="cert-tags">
+                <span>Python Core</span>
+                <span>Web Services</span>
+                <span>API Integration</span>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-date">📅 Certified</span>
+            <a href="https://drive.google.com/file/d/1avuDPfUpJctx6dPWYwq-3yYiYVfaLIh2/view" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 6: Python Data Structures -->
+        <div class="cert-card reveal" id="cert-michigan-pds">
+          <div class="cert-card-shine"></div>
+          <div class="cert-top-bar">
+            <span class="cert-type-pill michigan-pill">Data Structures</span>
+            <span class="cert-status-pill">✓ Verified</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-icon-box ds-box">📊</div>
+            <div class="cert-info">
+              <span class="cert-issuer">University of Michigan (Coursera)</span>
+              <h3 class="cert-name">Python Data Structures</h3>
+              <p class="cert-desc">Detailed exploration of core Python data structures: sequential lists, dictionaries, tuples, compound data processing, and complex algorithmic file analysis.</p>
+              <div class="cert-tags">
+                <span>Data Structures</span>
+                <span>File Analytics</span>
+                <span>Algorithms</span>
+              </div>
+            </div>
+          </div>
+          <div class="cert-card-footer">
+            <span class="cert-date">📅 Certified</span>
+            <a href="https://drive.google.com/file/d/1aBIJ4wLs0ekzqQKGi71QeILEnnrvuzY3/view" target="_blank" rel="noopener noreferrer" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
           </div>
         </div>
 
