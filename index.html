@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subham | Creative Developer Portfolio</title>
+  <meta name="description" content="Subham's personal portfolio — creative developer crafting stunning digital experiences with code and design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-outline" class="cursor-outline"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">Subham</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link" id="nl-home">Home</a></li>
+      <li><a href="#about" class="nav-link" id="nl-about">About</a></li>
+      <li><a href="#skills" class="nav-link" id="nl-skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" id="nl-projects">Projects</a></li>
+      <li><a href="#contact" class="nav-link" id="nl-contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" id="nav-hire-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-nav-links" id="mobile-nav-links">
+      <li><a href="#home" class="mobile-nav-link">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ===================== HERO SECTION ===================== -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge" id="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Available for Work</span>
+        </div>
+        <h1 class="hero-title" id="hero-title">
+          <span class="greeting">Hey, I'm</span>
+          <span class="name-highlight">Subham</span>
+          <span class="title-line">
+            I Build <span class="typed-wrapper"><span id="typed-text" class="typed-text"></span><span class="typed-cursor">|</span></span>
+          </span>
+        </h1>
+        <p class="hero-desc" id="hero-desc">
+          A passionate full-stack developer crafting immersive digital experiences. 
+          I turn ideas into beautiful, functional realities with clean code and stunning design.
+        </p>
+        <div class="hero-actions" id="hero-actions">
+          <a href="#projects" class="btn-primary" id="view-work-btn">
+            <span>View My Work</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-secondary" id="contact-hero-btn">
+            <span>Let's Talk</span>
+          </a>
+        </div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Exp</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="20">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" id="hero-visual">
+        <div class="avatar-ring-wrapper">
+          <div class="avatar-ring ring-outer"></div>
+          <div class="avatar-ring ring-mid"></div>
+          <div class="avatar-ring ring-inner"></div>
+          <div class="avatar-container">
+            <div class="avatar-emoji">👨‍💻</div>
+          </div>
+          <!-- Floating tech badges -->
+          <div class="floating-badge fb-1" id="fb-react">⚛️ React</div>
+          <div class="floating-badge fb-2" id="fb-node">🟢 Node.js</div>
+          <div class="floating-badge fb-3" id="fb-flutter">💙 Flutter</div>
+          <div class="floating-badge fb-4" id="fb-firebase">🔥 Firebase</div>
+        </div>
+      </div>
+      <div class="scroll-indicator" id="scroll-indicator">
+        <span>Scroll Down</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section id="about" class="about-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// about me</span>
+        <h2 class="section-title">Who Am <span class="gradient-text">I?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal reveal-left">
+          <div class="about-image-wrapper">
+            <div class="about-image-bg"></div>
+            <img src="images/profile-transparent.png" alt="Subham - Full-Stack Developer" class="about-profile-img" id="about-profile-img" />
+            <div class="about-badge-chip">
+              <span>🏆</span> Full-Stack Dev
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal reveal-right">
+          <h3 class="about-headline">Crafting Digital Magic <br /><span class="gradient-text">One Line at a Time</span></h3>
+          <p class="about-para">
+            I'm <strong>Subham</strong>, a passionate full-stack developer with a deep love for building 
+            beautiful and performant applications. From sleek mobile apps with Flutter to powerful 
+            web platforms, I bring ideas to life with precision and creativity.
+          </p>
+          <p class="about-para">
+            When I'm not coding, I'm exploring new technologies, contributing to open-source, 
+            or leveling up my design skills. I believe great software is where art meets engineering.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item" id="h1">
+              <div class="highlight-icon">🎯</div>
+              <div>
+                <strong>Problem Solver</strong>
+                <span>Turning complex challenges into elegant solutions</span>
+              </div>
+            </div>
+            <div class="highlight-item" id="h2">
+              <div class="highlight-icon">🚀</div>
+              <div>
+                <strong>Fast Learner</strong>
+                <span>Always staying ahead with cutting-edge tech</span>
+              </div>
+            </div>
+            <div class="highlight-item" id="h3">
+              <div class="highlight-icon">💡</div>
+              <div>
+                <strong>Creative Thinker</strong>
+                <span>Design-first approach to every project</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="#" class="btn-primary" id="download-cv-btn">
+              <span>Download CV</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS SECTION ===================== -->
+    <section id="skills" class="skills-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// tech stack</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-categories reveal">
+        <button class="skill-cat-btn active" id="cat-all" data-cat="all">All</button>
+        <button class="skill-cat-btn" id="cat-frontend" data-cat="frontend">Frontend</button>
+        <button class="skill-cat-btn" id="cat-backend" data-cat="backend">Backend</button>
+        <button class="skill-cat-btn" id="cat-mobile" data-cat="mobile">Mobile</button>
+        <button class="skill-cat-btn" id="cat-tools" data-cat="tools">Tools</button>
+      </div>
+      <div class="skills-grid" id="skills-grid">
+        <!-- Frontend -->
+        <div class="skill-card reveal" data-cat="frontend" id="sk-html">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-info">
+            <span class="skill-name">HTML5 / CSS3</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="95"></div></div>
+            <span class="skill-pct">95%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="frontend" id="sk-js">
+          <div class="skill-icon">⚡</div>
+          <div class="skill-info">
+            <span class="skill-name">JavaScript / TS</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="frontend" id="sk-react">
+          <div class="skill-icon">⚛️</div>
+          <div class="skill-info">
+            <span class="skill-name">React / Next.js</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+            <span class="skill-pct">88%</span>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div class="skill-card reveal" data-cat="backend" id="sk-node">
+          <div class="skill-icon">🟢</div>
+          <div class="skill-info">
+            <span class="skill-name">Node.js / Express</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+            <span class="skill-pct">85%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="backend" id="sk-firebase">
+          <div class="skill-icon">🔥</div>
+          <div class="skill-info">
+            <span class="skill-name">Firebase</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="92"></div></div>
+            <span class="skill-pct">92%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="backend" id="sk-mongo">
+          <div class="skill-icon">🍃</div>
+          <div class="skill-info">
+            <span class="skill-name">MongoDB</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+            <span class="skill-pct">80%</span>
+          </div>
+        </div>
+        <!-- Mobile -->
+        <div class="skill-card reveal" data-cat="mobile" id="sk-flutter">
+          <div class="skill-icon">💙</div>
+          <div class="skill-info">
+            <span class="skill-name">Flutter / Dart</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="mobile" id="sk-rn">
+          <div class="skill-icon">📱</div>
+          <div class="skill-info">
+            <span class="skill-name">React Native</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div>
+            <span class="skill-pct">75%</span>
+          </div>
+        </div>
+        <!-- Tools -->
+        <div class="skill-card reveal" data-cat="tools" id="sk-git">
+          <div class="skill-icon">🐙</div>
+          <div class="skill-info">
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="93"></div></div>
+            <span class="skill-pct">93%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="tools" id="sk-figma">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-info">
+            <span class="skill-name">Figma / Design</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div>
+            <span class="skill-pct">78%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="tools" id="sk-docker">
+          <div class="skill-icon">🐳</div>
+          <div class="skill-info">
+            <span class="skill-name">Docker / DevOps</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div>
+            <span class="skill-pct">70%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-cat="backend" id="sk-python">
+          <div class="skill-icon">🐍</div>
+          <div class="skill-info">
+            <span class="skill-name">Python / Django</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="82"></div></div>
+            <span class="skill-pct">82%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS SECTION ===================== -->
+    <section id="projects" class="projects-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// my work</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1: Warehouse Management System -->
+        <div class="project-card reveal featured-project" id="proj-warehouse">
+          <div class="featured-label">⚡ Featured</div>
+          <div class="project-image">
+            <img src="images/proj-warehouse.jpg" alt="Warehouse Management System" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/warehouse_management" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">Flutter</span>
+              <span class="proj-tag">Dart</span>
+              <span class="proj-tag">Firebase</span>
+              <span class="proj-tag">Firestore</span>
+            </div>
+            <h3 class="proj-title">Warehouse Management System</h3>
+            <p class="proj-desc">Enterprise-grade mobile inventory solution tracking multi-warehouse stock, barcode scanning, category grouping, and instant cloud sync.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/warehouse_management" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: TaskFlow Pro -->
+        <div class="project-card reveal featured-project" id="proj-taskflow">
+          <div class="featured-label">🚀 Enterprise</div>
+          <div class="project-image">
+            <img src="images/proj-taskflow.jpg" alt="TaskFlow Pro" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/taskflow-pro-complete" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">Java 21</span>
+              <span class="proj-tag">Spring Boot 3.3</span>
+              <span class="proj-tag">Spring Security</span>
+              <span class="proj-tag">JWT</span>
+            </div>
+            <h3 class="proj-title">TaskFlow Pro — Enterprise PM</h3>
+            <p class="proj-desc">Scalable Spring Boot backend for secure employee, project, and task management, built with layered architecture and RBAC security.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/taskflow-pro-complete" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Production</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Enterprise ETL -->
+        <div class="project-card reveal" id="proj-etl">
+          <div class="project-image">
+            <img src="images/proj-etl.jpg" alt="Enterprise ETL Platform" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/enterprise_etl" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">Python 3.11</span>
+              <span class="proj-tag">FastAPI</span>
+              <span class="proj-tag">Airflow</span>
+              <span class="proj-tag">Docker</span>
+            </div>
+            <h3 class="proj-title">Enterprise ETL & Data Pipeline</h3>
+            <p class="proj-desc">Automated enterprise data cleaning & orchestration platform managing DAG pipelines, schema compliance, anomaly detection, and analytics storage.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/enterprise_etl" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status pipeline">● Pipeline</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: OpenAI Chatbot -->
+        <div class="project-card reveal" id="proj-chatbot">
+          <div class="project-image">
+            <img src="images/proj-chatbot.jpg" alt="OpenAI Chatbot" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/OpenAI-Chatbot" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">Kotlin</span>
+              <span class="proj-tag">Android</span>
+              <span class="proj-tag">OpenAI API</span>
+              <span class="proj-tag">Coroutines</span>
+            </div>
+            <h3 class="proj-title">OpenAI Smart Chatbot</h3>
+            <p class="proj-desc">AI-powered conversational Android assistant leveraging OpenAI models with context tracking, voice interaction, and modern Material UI.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/OpenAI-Chatbot" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Bookstore API -->
+        <div class="project-card reveal" id="proj-bookstore">
+          <div class="project-image">
+            <img src="images/proj-bookstore.jpg" alt="Bookstore Management System" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/bookstore_api" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">Django REST</span>
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">JWT</span>
+            </div>
+            <h3 class="proj-title">Bookstore Management Platform</h3>
+            <p class="proj-desc">Full-stack bookstore platform featuring authenticated Django REST APIs, catalog filtering, book borrowing workflows, and responsive UI.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/bookstore_api" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Public API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: SmartPortal -->
+        <div class="project-card reveal" id="proj-smartportal">
+          <div class="project-image">
+            <img src="images/proj-smartportal.jpg" alt="SmartPortal" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/SmartPortal" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Node.js</span>
+              <span class="proj-tag">Express</span>
+              <span class="proj-tag">REST API</span>
+            </div>
+            <h3 class="proj-title">SmartPortal Enterprise Hub</h3>
+            <p class="proj-desc">Centralized portal for managing users, data, and services efficiently with structured client-server architecture and scalable modular backend.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/SmartPortal" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Leave Management System -->
+        <div class="project-card reveal" id="proj-leavems">
+          <div class="project-image">
+            <img src="images/proj-leavems.jpg" alt="Leave Management System" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/LeaveManagementSystem" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">MySQL</span>
+              <span class="proj-tag">Bootstrap</span>
+              <span class="proj-tag">HR Tech</span>
+            </div>
+            <h3 class="proj-title">Leave Management System</h3>
+            <p class="proj-desc">Employee leave request and administrative approval platform with leave quota balance calculations, real-time status updates, and history tracking.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/LeaveManagementSystem" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Weather Forecast App -->
+        <div class="project-card reveal" id="proj-weather">
+          <div class="project-image">
+            <img src="images/proj-weather.jpg" alt="Weather Forecast App" class="proj-cover-img" />
+            <div class="project-overlay">
+              <a href="https://github.com/Subbham829584/weather-forecast-app" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">Weather API</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Glassmorphism</span>
+            </div>
+            <h3 class="proj-title">Weather Forecast Web App</h3>
+            <p class="proj-desc">Live meteorological weather application delivering current atmospheric stats, multi-day forecast models, location search, and visual weather metrics.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Subbham829584/weather-forecast-app" target="_blank" rel="noopener noreferrer" class="proj-github-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <span class="proj-status online">● Web App</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section id="testimonials" class="testimonials-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// client love</span>
+        <h2 class="section-title">What People <span class="gradient-text">Say</span></h2>
+      </div>
+      <div class="testimonials-track-wrapper">
+        <div class="testimonials-track" id="testimonials-track">
+          <div class="testimonial-card" id="tc-1">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Subham delivered our e-commerce platform in record time with stunning design and zero bugs. Absolutely exceptional work!</p>
+            <div class="testi-author">
+              <div class="testi-avatar">🧑‍💼</div>
+              <div>
+                <strong>Rahul Sharma</strong>
+                <span>CEO, RetailPro India</span>
+              </div>
+            </div>
+            <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card" id="tc-2">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">The Flutter app Subham built for us is incredibly smooth. Our users love the UI and we've seen a 40% increase in engagement!</p>
+            <div class="testi-author">
+              <div class="testi-avatar">👩‍💼</div>
+              <div>
+                <strong>Priya Mehta</strong>
+                <span>Product Manager, TechWave</span>
+              </div>
+            </div>
+            <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card" id="tc-3">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Working with Subham is a pleasure. He understands the brief perfectly and always goes above and beyond expectations.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">🧔</div>
+              <div>
+                <strong>Arjun Patel</strong>
+                <span>Founder, StartupNest</span>
+              </div>
+            </div>
+            <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="testimonial-card" id="tc-4">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">The WMS system transformed our operations. Real-time tracking, beautiful interface — Subham is a genius developer!</p>
+            <div class="testi-author">
+              <div class="testi-avatar">👨‍🏭</div>
+              <div>
+                <strong>Vikram Singh</strong>
+                <span>Operations Head, LogiCorp</span>
+              </div>
+            </div>
+            <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section id="contact" class="contact-section section">
+      <div class="section-header reveal">
+        <span class="section-tag">// get in touch</span>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal reveal-left">
+          <h3 class="contact-headline">Ready to build something <span class="gradient-text">amazing?</span></h3>
+          <p class="contact-para">Whether you have a project idea, want to collaborate, or just want to say hi — my inbox is always open. Let's create magic together! 🚀</p>
+          <div class="contact-links">
+            <a href="mailto:subham@email.com" class="contact-link" id="email-link">
+              <div class="contact-link-icon">📧</div>
+              <div>
+                <strong>Email</strong>
+                <span>subham@email.com</span>
+              </div>
+            </a>
+            <a href="https://github.com/Subbham829584" target="_blank" rel="noopener noreferrer" class="contact-link" id="github-link">
+              <div class="contact-link-icon">🐙</div>
+              <div>
+                <strong>GitHub</strong>
+                <span>github.com/Subbham829584</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="contact-link" id="linkedin-link">
+              <div class="contact-link-icon">💼</div>
+              <div>
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/in/subham</span>
+              </div>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="contact-link" id="twitter-link">
+              <div class="contact-link-icon">🐦</div>
+              <div>
+                <strong>Twitter</strong>
+                <span>@subham_dev</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal reveal-right">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group" id="fg-name">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Rahul Sharma" required />
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="rahul@example.com" required />
+            </div>
+            <div class="form-group" id="fg-subject">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Let's work together!" required />
+            </div>
+            <div class="form-group" id="fg-message">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width" id="send-msg-btn">
+              <span>Send Message</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+          <div class="form-success" id="form-success">
+            <div class="success-icon">🎉</div>
+            <h4>Message Sent!</h4>
+            <p>Thanks for reaching out! I'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Subham</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-tagline">Building the future, one line at a time ✨</p>
+      <div class="footer-social">
+        <a href="https://github.com/Subbham829584" target="_blank" rel="noopener noreferrer" class="social-icon" id="footer-github" title="Subham on GitHub">🐙</a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon" id="footer-linkedin">💼</a>
+        <a href="https://twitter.com" target="_blank" class="social-icon" id="footer-twitter">🐦</a>
+        <a href="mailto:subham@email.com" class="social-icon" id="footer-email">📧</a>
+      </div>
+      <p class="footer-copy">© 2026 Subham. Crafted with ❤️ and lots of ☕</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
