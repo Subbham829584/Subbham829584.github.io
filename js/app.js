@@ -208,7 +208,7 @@ function initTypingEffect() {
     'Backend & Cloud Systems',
     'Production Flutter Apps',
     'Airflow ETL Pipelines',
-    'VMS for 50+ Vessels'
+    'Scalable Cloud Services'
   ];
 
   let wordIdx = 0;
@@ -457,18 +457,18 @@ const projectModalData = {
     title: 'Warehouse Management System',
     badge: 'Production Flutter & Firebase Architecture',
     tags: ['Flutter 3', 'Dart', 'Firebase Firestore', 'Riverpod 2.0', 'Camera Barcode Scanner', 'Offline-First'],
-    image: 'images/warehouse-mobile-demo.jpg',
-    desc: 'Enterprise-grade mobile logistics solution designed for high-throughput warehouse environments. Architected with reactive Riverpod state management, instant barcode camera decoding, and an offline-first Firestore synchronization cache ensuring 100% operational reliability even in connectivity blindspots.',
+    image: 'images/warehouse-real-screens.jpg',
+    desc: 'Production-grade mobile inventory solution designed for multi-godown stock management. Features dynamic product groups, detailed item cataloging with unit pricing, location-based storage tracking across godown floors, instant search, and cloud Firestore synchronization with offline persistence.',
     features: [
       {
         icon: '📷',
-        title: 'Barcode Camera Scanner',
-        desc: 'Instant camera recognition with live SKU bounding box, rapid quantity confirmation, and bin location routing.'
+        title: 'Barcode Camera Scanner & Search',
+        desc: 'Instant camera recognition and live SKU search across categories and godown floors.'
       },
       {
         icon: '📦',
-        title: 'Multi-Warehouse Stock Overview',
-        desc: 'Live stock level metrics, instant category filters, and automated low-inventory alerts with threshold notifications.'
+        title: 'Multi-Godown Stock Overview',
+        desc: 'Live stock quantity counters, product groups (Toys, Electronics, Sports), and inventory valuation.'
       },
       {
         icon: '🔄',
@@ -476,9 +476,9 @@ const projectModalData = {
         desc: 'Idempotent document mutations with offline persistence cache & automated background conflict resolution.'
       },
       {
-        icon: '📊',
-        title: 'Inventory Valuation & Health',
-        desc: 'Dynamic inventory value calculation ($1.2M+ simulated scale) with category breakdown donut visualization.'
+        icon: '🏷️',
+        title: 'Product Catalog & Pricing',
+        desc: 'Comprehensive product attributes including company brand, cost, quantity, and floor locations.'
       }
     ],
     github: 'https://github.com/Subbham829584/warehouse_management'
@@ -488,7 +488,7 @@ const projectModalData = {
     badge: 'Automated Data Engineering Framework',
     tags: ['Python 3.11', 'Apache Airflow', 'Docker Compose', 'FastAPI', 'Streamlit', 'Data Quality Engine'],
     image: 'images/proj-etl.jpg',
-    desc: 'Automated enterprise data ingestion and orchestration platform processing 5,000+ multi-format records (CSV, Excel, JSON, PDF, DOCX) across Apache Airflow DAGs. Features a proprietary 5-dimension data quality engine and Streamlit analytics dashboard.',
+    desc: 'Automated enterprise data ingestion and orchestration platform processing 10,000+ multi-format records (CSV, Excel, JSON, PDF, DOCX) across Apache Airflow DAGs. Features a proprietary 5-dimension data quality engine, 8 containerized microservices, and Streamlit analytics dashboard.',
     features: [
       {
         icon: '🌪️',
@@ -507,8 +507,8 @@ const projectModalData = {
       },
       {
         icon: '🐳',
-        title: 'Multi-Container Docker Architecture',
-        desc: 'Dockerized microservice stack with isolated scheduler, webserver, and worker execution containers.'
+        title: '8-Service Container Architecture',
+        desc: 'Containerized stack with FastAPI, Airflow, Celery, Redis, and PostgreSQL for 1-command deployment.'
       }
     ],
     github: 'https://github.com/Subbham829584/enterprise_etl'
@@ -542,6 +542,96 @@ const projectModalData = {
       }
     ],
     github: 'https://github.com/Subbham829584/taskflow-pro-complete'
+  },
+  chatbot: {
+    title: 'AI-Powered Smart Chatbot & Notifications',
+    badge: 'OpenAI API & Async WebSocket System',
+    tags: ['Python / Kotlin', 'OpenAI API', 'WebSockets', 'AsyncIO', 'Real-Time Streaming'],
+    image: 'images/proj-chatbot.jpg',
+    desc: 'Asynchronous intelligent chatbot engineered for low-latency conversations. Integrates OpenAI models with real-time WebSocket notifications, streaming response generation, and concurrent message queuing.',
+    features: [
+      {
+        icon: '🤖',
+        title: 'OpenAI Streaming Architecture',
+        desc: 'Chunked asynchronous token streaming delivering immediate perceptual response.'
+      },
+      {
+        icon: '⚡',
+        title: '35% Latency Optimization',
+        desc: 'Engineered non-blocking I/O event loops reducing conversation latency significantly.'
+      },
+      {
+        icon: '🔔',
+        title: 'Real-Time Notification Pipeline',
+        desc: 'Persistent WebSocket connections handling concurrent user broadcasts and alerts.'
+      },
+      {
+        icon: '🛡️',
+        title: 'Robust Session & Token Management',
+        desc: 'Context memory persistence with token budget limiting and structured error handling.'
+      }
+    ],
+    github: 'https://github.com/Subbham829584/OpenAI-Chatbot'
+  },
+  leavems: {
+    title: 'Leave Management System',
+    badge: 'Role-Based Enterprise Portal',
+    tags: ['PHP', 'MySQL', 'HTML/CSS', 'RBAC', 'Approval Workflows'],
+    image: 'images/proj-leavems.jpg',
+    desc: 'Role-based employee leave portal managing 100+ employee records. Features multi-level administrative approvals, leave quota calculations, historical auditing, and automated status notifications.',
+    features: [
+      {
+        icon: '👥',
+        title: 'Role-Based Access Control (RBAC)',
+        desc: 'Strict authorization separation between Employees, Managers, and HR Administrators.'
+      },
+      {
+        icon: '📝',
+        title: 'Multi-Tier Approval Pipeline',
+        desc: 'Automated request routing with manager review stages and instant status updates.'
+      },
+      {
+        icon: '📊',
+        title: 'Leave Balance & Quota Engine',
+        desc: 'Dynamic quota tracking for sick, casual, and paid leaves with rollover calculations.'
+      },
+      {
+        icon: '📋',
+        title: 'Auditing & Reporting Module',
+        desc: 'Exportable attendance and leave history logs for organizational HR compliance.'
+      }
+    ],
+    github: 'https://github.com/Subbham829584/LeaveManagementSystem'
+  },
+  smartportal: {
+    title: 'SmartPortal Enterprise Hub',
+    badge: 'Modular Node.js & REST Architecture',
+    tags: ['JavaScript', 'Node.js', 'Express', 'REST API', 'JWT Auth'],
+    image: 'images/proj-smartportal.jpg',
+    desc: 'Centralized enterprise portal providing structured management of users, records, and service workflows. Built with a modular Express backend, JWT session security, and clean API endpoints.',
+    features: [
+      {
+        icon: '🌐',
+        title: 'Modular REST API Endpoints',
+        desc: 'Decoupled route controllers following standard RESTful design principles and validation.'
+      },
+      {
+        icon: '🔐',
+        title: 'JWT Authentication & Security',
+        desc: 'Secure token issuance, password hashing with bcrypt, and middleware-level route guards.'
+      },
+      {
+        icon: '📦',
+        title: 'Centralized Administrative Hub',
+        desc: 'Unified interface for monitoring operations, updating records, and service diagnostics.'
+      },
+      {
+        icon: '⚡',
+        title: 'Scalable Client-Server Structure',
+        desc: 'Production-ready architecture easily extensible for microservice integration.'
+      }
+    ],
+    github: 'https://github.com/Subbham829584/SmartPortal'
   }
 };
 
