@@ -28,7 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. MOBILE MENU TOGGLE
   initMobileMenu();
 
-  // 9. CONTACT FORM INTERACTION
+  // 9. ARCHIVE PROJECTS ACCORDION TOGGLE
+  initArchiveProjectsToggle();
+
+  // 10. INTERACTIVE PROJECT PREVIEW MODAL
+  initProjectModal();
+
+  // 11. CONTACT FORM INTERACTION WITH REAL EMAIL SUBMIT
   initContactForm();
 });
 
@@ -199,10 +205,10 @@ function initTypingEffect() {
   if (!target) return;
 
   const words = [
-    'Flutter & Dart Apps',
-    'VMS for 50+ Vessels',
-    '20+ Cloud Functions',
-    'FastAPI & ETL Pipelines'
+    'Backend & Cloud Systems',
+    'Production Flutter Apps',
+    'Airflow ETL Pipelines',
+    'VMS for 50+ Vessels'
   ];
 
   let wordIdx = 0;
@@ -239,43 +245,55 @@ function initTypingEffect() {
 }
 
 /* ==========================================================
-   4. STAT COUNTERS
+   4. STAT COUNTERS (Resilient to 0 display)
    ========================================================== */
 function initStatCounters() {
   const counters = document.querySelectorAll('.stat-number');
   let started = false;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !started) {
-          started = true;
-          counters.forEach((counter) => {
-            const target = +counter.getAttribute('data-count');
-            const duration = 1800;
-            const stepTime = 20;
-            const steps = duration / stepTime;
-            const increment = target / steps;
-            let current = 0;
+  function runCounterAnimation() {
+    if (started) return;
+    started = true;
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute('data-count');
+      const duration = 1600;
+      const stepTime = 25;
+      const steps = duration / stepTime;
+      const increment = target / steps;
+      let current = 0;
 
-            const timer = setInterval(() => {
-              current += increment;
-              if (current >= target) {
-                counter.textContent = target;
-                clearInterval(timer);
-              } else {
-                counter.textContent = Math.floor(current);
-              }
-            }, stepTime);
-          });
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target >= 1000 ? target.toLocaleString('en-US') : target;
+          clearInterval(timer);
+        } else {
+          const val = Math.floor(current);
+          counter.textContent = val >= 1000 ? val.toLocaleString('en-US') : val;
         }
-      });
-    },
-    { threshold: 0.5 }
-  );
+      }, stepTime);
+    });
+  }
 
   const heroStats = document.getElementById('hero-stats');
-  if (heroStats) observer.observe(heroStats);
+  if (heroStats) {
+    const rect = heroStats.getBoundingClientRect();
+    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+      runCounterAnimation();
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              runCounterAnimation();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(heroStats);
+    }
+  }
 }
 
 /* ==========================================================
@@ -318,17 +336,10 @@ function initScrollAnimations() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-
-          // If it has skill bars, trigger their progress
-          const bars = entry.target.querySelectorAll('.skill-bar');
-          bars.forEach((bar) => {
-            const width = bar.getAttribute('data-width');
-            bar.style.width = width + '%';
-          });
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.1 }
   );
 
   reveals.forEach((el) => revealObserver.observe(el));
@@ -355,8 +366,6 @@ function initSkillsFilter() {
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-            const bar = card.querySelector('.skill-bar');
-            if (bar) bar.style.width = bar.getAttribute('data-width') + '%';
           }, 50);
         } else {
           card.style.opacity = '0';
@@ -419,33 +428,284 @@ function initMobileMenu() {
 }
 
 /* ==========================================================
-   9. CONTACT FORM INTERACTION
+   9. ARCHIVE PROJECTS ACCORDION TOGGLE
+   ========================================================== */
+function initArchiveProjectsToggle() {
+  const toggleBtn = document.getElementById('archive-toggle-btn');
+  const container = document.getElementById('archive-projects');
+  if (!toggleBtn || !container) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = container.classList.contains('active');
+    if (isOpen) {
+      container.classList.remove('active');
+      toggleBtn.classList.remove('open');
+      toggleBtn.querySelector('.archive-toggle-text').textContent = 'View Past & Academic Projects (PHP / MySQL)';
+    } else {
+      container.classList.add('active');
+      toggleBtn.classList.add('open');
+      toggleBtn.querySelector('.archive-toggle-text').textContent = 'Hide Past & Academic Projects';
+    }
+  });
+}
+
+/* ==========================================================
+   10. INTERACTIVE PROJECT PREVIEW MODAL
+   ========================================================== */
+const projectModalData = {
+  warehouse: {
+    title: 'Warehouse Management System',
+    badge: 'Production Flutter & Firebase Architecture',
+    tags: ['Flutter 3', 'Dart', 'Firebase Firestore', 'Riverpod 2.0', 'Camera Barcode Scanner', 'Offline-First'],
+    image: 'images/warehouse-mobile-demo.jpg',
+    desc: 'Enterprise-grade mobile logistics solution designed for high-throughput warehouse environments. Architected with reactive Riverpod state management, instant barcode camera decoding, and an offline-first Firestore synchronization cache ensuring 100% operational reliability even in connectivity blindspots.',
+    features: [
+      {
+        icon: '📷',
+        title: 'Barcode Camera Scanner',
+        desc: 'Instant camera recognition with live SKU bounding box, rapid quantity confirmation, and bin location routing.'
+      },
+      {
+        icon: '📦',
+        title: 'Multi-Warehouse Stock Overview',
+        desc: 'Live stock level metrics, instant category filters, and automated low-inventory alerts with threshold notifications.'
+      },
+      {
+        icon: '🔄',
+        title: 'Cloud Firestore Sync Engine',
+        desc: 'Idempotent document mutations with offline persistence cache & automated background conflict resolution.'
+      },
+      {
+        icon: '📊',
+        title: 'Inventory Valuation & Health',
+        desc: 'Dynamic inventory value calculation ($1.2M+ simulated scale) with category breakdown donut visualization.'
+      }
+    ],
+    github: 'https://github.com/Subbham829584/warehouse_management'
+  },
+  etl: {
+    title: 'Enterprise ETL & Data Orchestration Pipeline',
+    badge: 'Automated Data Engineering Framework',
+    tags: ['Python 3.11', 'Apache Airflow', 'Docker Compose', 'FastAPI', 'Streamlit', 'Data Quality Engine'],
+    image: 'images/proj-etl.jpg',
+    desc: 'Automated enterprise data ingestion and orchestration platform processing 5,000+ multi-format records (CSV, Excel, JSON, PDF, DOCX) across Apache Airflow DAGs. Features a proprietary 5-dimension data quality engine and Streamlit analytics dashboard.',
+    features: [
+      {
+        icon: '🌪️',
+        title: 'Airflow DAG Orchestration',
+        desc: 'Multi-stage scheduled DAG execution with intelligent retry policies and decoupled stage dependencies.'
+      },
+      {
+        icon: '🎯',
+        title: '5-Dimension Quality Engine',
+        desc: 'Automated data scoring covering Completeness, Validity, Consistency, Accuracy, and Uniqueness.'
+      },
+      {
+        icon: '📊',
+        title: 'Streamlit Real-Time Monitoring',
+        desc: 'Interactive visual pipeline dashboard reducing manual operational oversight by ~40%.'
+      },
+      {
+        icon: '🐳',
+        title: 'Multi-Container Docker Architecture',
+        desc: 'Dockerized microservice stack with isolated scheduler, webserver, and worker execution containers.'
+      }
+    ],
+    github: 'https://github.com/Subbham829584/enterprise_etl'
+  },
+  taskflow: {
+    title: 'TaskFlow Pro — Enterprise PM Backend',
+    badge: 'Enterprise Spring Boot Architecture',
+    tags: ['Java 21', 'Spring Boot 3.3', 'Spring Security', 'JWT Auth', 'PostgreSQL', 'Docker'],
+    image: 'images/proj-taskflow.jpg',
+    desc: 'High-concurrency project management and employee operations backend engineered with Java 21 and Spring Boot 3.3. Built with clean separation of concerns, stateless JWT authentication, and strict Role-Based Access Control (RBAC).',
+    features: [
+      {
+        icon: '☕',
+        title: 'Spring Boot 3.3 & Java 21',
+        desc: 'Modular layered architecture with Controller, Service, and Repository patterns for high throughput.'
+      },
+      {
+        icon: '🛡️',
+        title: 'Stateless JWT & RBAC Security',
+        desc: 'Granular role-based authorization securing employee and administrative workflows.'
+      },
+      {
+        icon: '📑',
+        title: 'OpenAPI Contracts & Swagger',
+        desc: 'Strict DTO validation with interactive API documentation for client teams.'
+      },
+      {
+        icon: '🐘',
+        title: 'PostgreSQL Relational Storage',
+        desc: 'Optimized relational schema modeling with JPA/Hibernate transactions and audit logging.'
+      }
+    ],
+    github: 'https://github.com/Subbham829584/taskflow-pro-complete'
+  }
+};
+
+function initProjectModal() {
+  const backdrop = document.getElementById('project-modal');
+  if (!backdrop) return;
+
+  const closeBtn = document.getElementById('modal-close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDemoModal);
+  }
+
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) {
+      closeDemoModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+      closeDemoModal();
+    }
+  });
+}
+
+window.openDemoModal = function (projectId) {
+  const data = projectModalData[projectId];
+  if (!data) return;
+
+  const backdrop = document.getElementById('project-modal');
+  const badgeEl = document.getElementById('modal-badge');
+  const titleEl = document.getElementById('modal-title');
+  const tagsEl = document.getElementById('modal-tags');
+  const imgEl = document.getElementById('modal-img');
+  const descEl = document.getElementById('modal-desc');
+  const featuresEl = document.getElementById('modal-features');
+  const githubLinkEl = document.getElementById('modal-github-link');
+
+  if (badgeEl) badgeEl.textContent = data.badge;
+  if (titleEl) titleEl.textContent = data.title;
+  if (imgEl) {
+    imgEl.src = data.image;
+    imgEl.alt = data.title;
+  }
+  if (descEl) descEl.textContent = data.desc;
+
+  if (tagsEl) {
+    tagsEl.innerHTML = data.tags.map((t) => `<span class="modal-tag">${t}</span>`).join('');
+  }
+
+  if (featuresEl) {
+    featuresEl.innerHTML = data.features
+      .map(
+        (f) => `
+        <div class="modal-feature-card">
+          <h4><span>${f.icon}</span> ${f.title}</h4>
+          <p>${f.desc}</p>
+        </div>
+      `
+      )
+      .join('');
+  }
+
+  if (githubLinkEl) {
+    githubLinkEl.href = data.github;
+  }
+
+  backdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeDemoModal = function () {
+  const backdrop = document.getElementById('project-modal');
+  if (backdrop) {
+    backdrop.classList.remove('active');
+  }
+  document.body.style.overflow = '';
+};
+
+/* ==========================================================
+   11. CONTACT FORM INTERACTION (With Real AJAX Email Delivery)
    ========================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const successBox = document.getElementById('form-success');
   if (!form || !successBox) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
 
-    submitBtn.innerHTML = '<span>Sending... 🚀</span>';
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const subject = subjectInput ? subjectInput.value.trim() : 'Portfolio Contact';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    submitBtn.innerHTML = '<span>Sending message... 🚀</span>';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/subham.builds.ai@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+          _replyto: email,
+          _subject: `[Portfolio Contact] ${subject} from ${name}`
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok || result.success === 'true' || result.success === true) {
+        form.style.display = 'none';
+        successBox.classList.add('active');
+        successBox.innerHTML = `
+          <div class="success-icon">🎉</div>
+          <h4>Message Delivered!</h4>
+          <p>Thank you <strong>${name || 'there'}</strong>! Your message has been sent directly to <strong>subham.builds.ai@gmail.com</strong>. I'll get back to you shortly.</p>
+        `;
+      } else {
+        throw new Error('Formsubmit endpoint error');
+      }
+    } catch (err) {
+      console.warn('Direct AJAX send fallback triggered:', err);
+      // Fallback: Show success with instant direct Gmail compose button
       form.style.display = 'none';
       successBox.classList.add('active');
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=subham.builds.ai@gmail.com&su=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(`Hi Subham,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
 
-      setTimeout(() => {
-        form.reset();
-        form.style.display = 'flex';
-        successBox.classList.remove('active');
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }, 5000);
-    }, 1200);
+      successBox.innerHTML = `
+        <div class="success-icon">✉️</div>
+        <h4>Almost Done!</h4>
+        <p>If direct network submission was restricted by an ad-blocker, click below to send your pre-filled email directly via Gmail or Mail client:</p>
+        <div style="margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+            <span>Open in Gmail ↗</span>
+          </a>
+          <a href="mailto:subham.builds.ai@gmail.com?subject=${encodeURIComponent(
+            subject
+          )}&body=${encodeURIComponent(message)}" class="btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+            <span>Open Mail Client ↗</span>
+          </a>
+        </div>
+      `;
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
   });
 }
+
